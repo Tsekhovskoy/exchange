@@ -1,0 +1,24 @@
+[08-Sep-2020 08:59:22 Europe/Helsinki] PHP Warning:  require_once(/exchange/views/template.php): failed to open stream: No such file or directory in /home/maksymtsekhovskyi/exchange/index.php on line 13
+[08-Sep-2020 08:59:22 Europe/Helsinki] PHP Stack trace:
+[08-Sep-2020 08:59:22 Europe/Helsinki] PHP   1. {main}() /home/maksymtsekhovskyi/exchange/index.php:0
+[08-Sep-2020 08:59:22 Europe/Helsinki] PHP Fatal error:  require_once(): Failed opening required '/exchange/views/template.php' (include_path='.:/usr/share/php') in /home/maksymtsekhovskyi/exchange/index.php on line 13
+[08-Sep-2020 08:59:22 Europe/Helsinki] PHP Stack trace:
+[08-Sep-2020 08:59:22 Europe/Helsinki] PHP   1. {main}() /home/maksymtsekhovskyi/exchange/index.php:0
+[08-Sep-2020 08:59:30 Europe/Helsinki] PHP Warning:  require_once(/exchange/views/template.php): failed to open stream: No such file or directory in /home/maksymtsekhovskyi/exchange/index.php on line 13
+[08-Sep-2020 08:59:30 Europe/Helsinki] PHP Stack trace:
+[08-Sep-2020 08:59:30 Europe/Helsinki] PHP   1. {main}() /home/maksymtsekhovskyi/exchange/index.php:0
+[08-Sep-2020 08:59:30 Europe/Helsinki] PHP Fatal error:  require_once(): Failed opening required '/exchange/views/template.php' (include_path='.:/usr/share/php') in /home/maksymtsekhovskyi/exchange/index.php on line 13
+[08-Sep-2020 08:59:30 Europe/Helsinki] PHP Stack trace:
+[08-Sep-2020 08:59:30 Europe/Helsinki] PHP   1. {main}() /home/maksymtsekhovskyi/exchange/index.php:0
+[08-Sep-2020 08:59:38 Europe/Helsinki] PHP Warning:  require_once(/exchange/views/template.php): failed to open stream: No such file or directory in /home/maksymtsekhovskyi/exchange/index.php on line 13
+[08-Sep-2020 08:59:38 Europe/Helsinki] PHP Stack trace:
+[08-Sep-2020 08:59:38 Europe/Helsinki] PHP   1. {main}() /home/maksymtsekhovskyi/exchange/index.php:0
+[08-Sep-2020 08:59:38 Europe/Helsinki] PHP Fatal error:  require_once(): Failed opening required '/exchange/views/template.php' (include_path='.:/usr/share/php') in /home/maksymtsekhovskyi/exchange/index.php on line 13
+[08-Sep-2020 08:59:38 Europe/Helsinki] PHP Stack trace:
+[08-Sep-2020 08:59:38 Europe/Helsinki] PHP   1. {main}() /home/maksymtsekhovskyi/exchange/index.php:0
+[08-Sep-2020 09:00:25 Europe/Helsinki] PHP Warning:  require_once(/exchange/views/template.php): failed to open stream: No such file or directory in /home/maksymtsekhovskyi/exchange/index.php on line 13
+[08-Sep-2020 09:00:25 Europe/Helsinki] PHP Stack trace:
+[08-Sep-2020 09:00:25 Europe/Helsinki] PHP   1. {main}() /home/maksymtsekhovskyi/exchange/index.php:0
+[08-Sep-2020 09:00:25 Europe/Helsinki] PHP Fatal error:  require_once(): Failed opening required '/exchange/views/template.php' (include_path='.:/usr/share/php') in /home/maksymtsekhovskyi/exchange/index.php on line 13
+[08-Sep-2020 09:00:25 Europe/Helsinki] PHP Stack trace:
+[08-Sep-2020 09:00:25 Europe/Helsinki] PHP   1. {main}() /home/maksymtsekhovskyi/exchange/index.php:0
