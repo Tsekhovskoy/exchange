@@ -31,7 +31,7 @@ class Auth_model
         $result = $this->connection->query($sql, []);
 
         foreach ($result as $value) {
-            if ($value['name'] == $this->data['name'] && md5($value['password'].self::SALT == $this->data['password'])) {
+            if (($value['name'] == $this->data['name']) && ((md5($this->data['password'].self::SALT) == $value['password']))) {
                 return true;
             } else {
                 return false;

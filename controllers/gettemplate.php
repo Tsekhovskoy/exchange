@@ -6,6 +6,3 @@ $newCourse = $courseModel->execute();
 if(!empty($newCourse)) {
     echo json_encode($newCourse);
 }
-else {
-    echo 'Current course is not available now!';
-}

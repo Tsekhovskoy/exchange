@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/exchange/css/default.css" rel="stylesheet"/>
+    <link href="./../css/default.css" rel="stylesheet"/>
 
 </head>
 <body>

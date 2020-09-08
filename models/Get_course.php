@@ -12,11 +12,16 @@ class Get_course
         $response = curl_exec($curl);
         curl_close($curl);
         $content = json_decode($response, true);
-        $result = [];
-        foreach ($content as $value) {
-            if ($value['r030'] == 840) {
-                $result[0] = $value['rate'];
+        if ($content) {
+            $result = [];
+            foreach ($content as $value) {
+                if ($value['r030'] == 840) {
+                    $result['course'] = $value['rate'];
+                }
             }
+        }
+        else {
+            $result['course'] = 0;
         }
         return $result;
     }

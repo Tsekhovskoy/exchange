@@ -5,7 +5,7 @@
 
     <title>Current course</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/course.js"></script>
+
 
     <script>
         function executeQuery() {
@@ -13,7 +13,13 @@
                 url         : 'controllers/gettemplate.php',
                 dataType    : 'json',
                 success: function(data) {
-                    $('#course').textContent('1 UAH: ' + data[0]);
+                    console.log(data.course);
+                    if (data.course > 0) {
+                    $('#course').text('1 USD: ' + data.course + 'UAH');
+                }
+                    else {
+                        $('#course').text('Error');
+                    }
                 }
             });
             setTimeout(executeQuery, 5000);
@@ -29,8 +35,7 @@
 <body>
     <h2>The current course for today</h2>
     <div>
-        <p id="course"></p>
-<!--        <span id="course"></span>-->
+        <p id="course">Course will be updated soon</p>
     </div>
 
 

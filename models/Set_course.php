@@ -35,19 +35,19 @@ class Set_course
     public function save() {
 
         $sql = 'INSERT INTO force_course (stopdate, course) VALUES (?, ?)';
-        $result = $this->connection->query($sql, [`'`. $this->data['stopdate'] .`'`, $this->data['forcecourse']]);
+        $result = $this->connection->query($sql, [$this->data['stopdate'], $this->data['forcecourse']]);
     }
 
     public function load() {
-        $sql = 'SELECT * FROM force_course ORDER BY `stopdate` ';
+        $sql = 'SELECT * FROM force_course ORDER BY stopdate DESC';
         $result = $this->connection->query($sql, []);
 
         if (count($result)) {
-            $new= json_encode($result);
+            echo json_encode($result);
         }
     }
+    public function execute() {
+        $this->save();
+        $this->load();
+    }
 }
-
-$model = new Set_course(Db_connection::getInstance());
-$model->save();
-$model->load();

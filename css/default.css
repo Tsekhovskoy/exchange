@@ -25,12 +25,38 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 10%;
 }
 
 .container {
     padding: 16px;
 }
+.bcross {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(./../img/main_sprite.png) 0 -303px no-repeat;
+}
 
+table {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: center;
 
+    alignment: center;
 
+}
+th {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: center;
+    width: 25%;
+
+}
+td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: center;
+    width: 25%;
+
+}
