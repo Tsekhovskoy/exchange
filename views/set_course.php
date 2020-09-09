@@ -14,19 +14,25 @@
 
 <body>
 <!--<form action="/exchange/models/Set_course.php" id="set_course" method="POST">-->
-<form id="set_course" method="">
-    <div>
-        <label>Force course end day</label>
-        <input type="datetime-local" name="datetime" id="datetime">
-        <label>Force course value</label>
-        <input type="number" name="forcecourse" id="forcecourse" step="0.01" min="0" placeholder="0,00"> UAH
-        <button type="submit" class="force_btn" id="force_btn">Submit</button>
-    </div>
-</form>
-<table class="force_table" id="force_table">
-    <tr> <th>Force course created at</th> <th>Force course valid until</th> <th>Force course value</th> <th>Action</th> </tr>
-</table>
-<div class="course_list" id="course_list"></div>
+<h2 align="center">Enter a new force course please</h2>
+<div class="force_form" align="center">
+    <form id="set_course" method="">
+            <label>Force course date valid</label>
+            <input type="datetime-local" name="datetime" id="datetime">
+            <label>Force course value</label>
+            <input type="number" name="forcecourse" id="forcecourse" step="0.01" min="0" placeholder="0,00"> UAH
+            <button type="submit" class="force_btn" id="force_btn">Submit</button>
+
+    </form>
+</div>
+<h2 align="center">History of force course changing</h2>
+
+<div class="force_history" align="center">
+    <table class="force_table" id="force_table">
+        <tr> <th>Force course created at</th> <th>Force course valid until</th> <th>Force course value</th> <th>Action</th> </tr>
+    </table>
+
+</div>
 
 </body>
 </html>

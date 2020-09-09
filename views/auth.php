@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Admin panel</title>
     <link href="./../css/default.css" rel="stylesheet"/>
 
 </head>
 <body>
-    <h2>Login Form</h2>
+<div align="center">
+    <h2>Please enter your login name and password</h2>
         <form action="/exchange/controllers/adminlogin.php" method="post">
             <div class="container">
                 <label for="uname"><b>Username</b></label>
@@ -18,5 +20,6 @@
                 <button type="submit">Login</button>
             </div>
         </form>
+</div>
 </body>
 </html>

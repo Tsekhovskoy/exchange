@@ -24,7 +24,7 @@ function sendAjaxForm(set_course, url) {
         success: function(response) {
             $('#force_table').empty();
             $('#set_course')[0].reset();
-
+            $('#force_table').append('<tr> <th>Force course created at</th> <th>Force course valid until</th> <th>Force course value</th> <th>Action</th> </tr>');
 
             for (var i = 0; i < response.length; i++) {
                 $('#force_table').append('<tr class="item" id="'+ response[i].id + '">' +

@@ -14,10 +14,10 @@ class Set_course
         if($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST["datetime"]) && isset($_POST["forcecourse"])) {
                 $dat = date("Y-m-d H:i:s", strtotime($_POST["datetime"]));
-                if ($dat < date('Y-m-d H:i:s')) {
-                    return ('Enter correct date and time');
-                }
-                $ndate = new DateTime($dat);
+//                if ($dat < date('Y-m-d H:i:s')) {
+//                    return ('Enter correct date and time');
+//                }
+//                $ndate = new DateTime($dat);
                 $this->data = array(
                     'stopdate' => $this->cleanData($dat),
                     'forcecourse' => $this->cleanData($_POST["forcecourse"]),
@@ -39,7 +39,7 @@ class Set_course
     }
 
     public function load() {
-        $sql = 'SELECT * FROM force_course ORDER BY stopdate DESC';
+        $sql = 'SELECT * FROM force_course ORDER BY startdate DESC';
         $result = $this->connection->query($sql, []);
 
         if (count($result)) {

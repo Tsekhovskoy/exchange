@@ -11,8 +11,6 @@ function getAjaxData(url) {
         url         :url,
         dataType    : "json",
         success: function(response) {
-            // $('#template').empty();
-
             for (var i = 0; i < response.length; i++) {
                 $('#force_table').append('<tr class="item" id="'+ response[i].id + '">' +
                     '<td>' + response[i].startdate + '</td>>' +
@@ -24,7 +22,7 @@ function getAjaxData(url) {
             }
         },
         error: function(response) {
-            swal("Server problem!", "Tell to your system administrator!", "error");
+            swal("Server's problem!", "Tell to your system administrator!", "error");
         }
     });
 }
