@@ -1,5 +1,6 @@
 /**
- * Removing the selected force course from the database and from the view without reloading the page
+ * Removing the selected force course record from the database and from the opened page without reloading by record's id.
+ * Block calls from /views/set_course.php
  */
 
 $( document ).ready(function() {

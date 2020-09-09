@@ -1,13 +1,12 @@
+<!--The main user page. A current course templating -->
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="UTF-8">
-
     <title>Current course</title>
-    <link href="css/default.css" rel="stylesheet"/>
+    <link href="./css/default.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/update_template.js"></script>
-
+    <script type="text/javascript" src="./js/update_template.js"></script>
 </head>
 
 <body>

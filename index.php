@@ -1,13 +1,8 @@
 <?php
-//
-//use LibraryLoaderAutoloader,
-//    LibraryControllerFrontController;
-//
-//require_once __DIR__ . "/Library/router.php";
-//$autoloader = new Autoloader;
-//$autoloader->register();
+/**
+ *The main page ("/") input point. Load the force course template (views/template.php)
+ */
 
-//$frontController = new Router();
-//$frontController->run();
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/exchange/views/template.php';
+//require_once $_SERVER['DOCUMENT_ROOT'].'/exchange/views/template.php';
+require_once ('./views/template.php');

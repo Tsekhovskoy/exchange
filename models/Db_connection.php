@@ -1,8 +1,9 @@
 <?php
 
 /**
- * The database connection class
- * */
+ * Class Db_connection
+ * The database connection class. Enter your sql-server parameters here
+ */
 
 class Db_connection
 {
@@ -14,12 +15,18 @@ class Db_connection
     protected $password = '2151';
     protected $host = '127.0.0.1';
 
+    /**
+     * Db_connection constructor.
+     */
     private function __construct()
     {
         $dsn = "mysql:host=$this->host; dbname=$this->dbName";
         $this->pdo = new PDO($dsn, $this->user, $this->password);
     }
 
+    /**
+     * @return Db_connection
+     */
     public static function getInstance()
     {
         if (!self::$instance) {
@@ -28,6 +35,11 @@ class Db_connection
         return self::$instance;
     }
 
+    /**
+     * @param $sql
+     * @param $params
+     * @return array
+     */
     public function query($sql, $params)
     {
         $statement = $this->pdo->prepare($sql);

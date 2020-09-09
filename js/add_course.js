@@ -1,5 +1,8 @@
 /**
- * Adding a new force course and rendering actual force courses without reloading the page
+ * Adding a new force course and rendering actual force courses without reloading the page.
+ * After clicking on the Submit button (see /views/set_course.php) form with data send to setcourse.php controller.
+ * Callable ajax function update force course records without page reloading.
+ * Block calls from /views/set_course.php
  */
 
 $( document ).ready(function() {

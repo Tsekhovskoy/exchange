@@ -1,11 +1,14 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/exchange/models/Db_connection.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/exchange/helpers/cleaner.php';
+//require_once $_SERVER['DOCUMENT_ROOT'].'/exchange/models/Db_connection.php';
+require_once ('./../models/Db_connection.php');
+//require_once $_SERVER['DOCUMENT_ROOT'].'/exchange/helpers/cleaner.php';
+require_once ('./../helpers/cleaner.php');
 
 /**
- * The Address deletion class. Removes an address by its ID
- * */
+ * Class Delete_course
+ * Class removes an force course record by its ID.
+ */
 
 class Delete_course
 {
@@ -13,6 +16,10 @@ class Delete_course
     protected $connection;
     public $cleaner;
 
+    /**
+     * Delete_course constructor.
+     * @param Db_connection $connection
+     */
     public function __construct(Db_connection $connection)
     {
         $this->connection = $connection;
@@ -20,8 +27,9 @@ class Delete_course
         $this->id = $this->cleaner->cleanData($_POST["id"]);
     }
 
-
-
+    /**
+     * Method deletes force course record from database by its id
+     */
     public function delete() {
 
         if ($this->isExist($this->id)) {
@@ -34,6 +42,11 @@ class Delete_course
         }
     }
 
+    /**
+     * @param $id
+     * @return bool
+     * Method check availability of force course by id in database
+     */
     public function isExist($id) {
         $sql = 'SELECT * FROM force_course WHERE id = ?';
         $result = $this->connection->query($sql, [$this->id]);
@@ -45,6 +58,9 @@ class Delete_course
         }
     }
 
+    /**
+     * The execute method
+     */
     public function execute() {
         $this->delete();
     }

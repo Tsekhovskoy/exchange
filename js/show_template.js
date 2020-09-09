@@ -1,5 +1,6 @@
 /**
- * Adding a new force course and rendering actual force courses without reloading the page
+ * Adding a new force course and rendering actual force courses without opened page reloading.
+ * Block calls from /view/set_course.php
  */
 
 $( document ).ready(function() {

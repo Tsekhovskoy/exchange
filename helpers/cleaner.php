@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Class Cleaner
+ * Do a security checking of $_POST-given parameters
+ * Class calls from Auth_model.php, Delete_course.php and Set_course.php models
+ */
 class Cleaner
 {
     public function cleanData($data)
