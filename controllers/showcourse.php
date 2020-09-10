@@ -6,9 +6,7 @@
  * If force course date not valid, controller calls "execute" method from Get_course model and get course from NBU api.
  */
 
-//require_once ($_SERVER['DOCUMENT_ROOT'].'/exchange/models/Get_valid.php');
 require_once ('./../models/Get_valid.php');
-//require_once ($_SERVER['DOCUMENT_ROOT'].'/exchange/models/Get_course.php');
 require_once ('./../models/Get_course.php');
 
 $courseModel = new Get_valid(Db_connection::getInstance());

@@ -4,8 +4,7 @@
  */
 
 $( document ).ready(function() {
-    $(document).on('click','.actbox', function (e) {
-            // e.preventDefault();
+    $(document).on('click','.actbox', function () {
             var id = $(this).find('.bcross').attr('data-id');
             dellById(id, './../controllers/deletecourse.php');
         }

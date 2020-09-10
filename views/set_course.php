@@ -17,7 +17,7 @@
     <h2 align="center">Enter a new force course please</h2>
     <div class="force_form" align="center">
         <form id="set_course" method="">
-                <label>Force course date valid</label>
+                <label>Force course date valid(mm/dd/yyyy, --:-- --)</label>
                 <input type="datetime-local" name="datetime" id="datetime">
                 <label>Force course value</label>
                 <input type="number" name="forcecourse" id="forcecourse" step="0.01" min="0" placeholder="0,00"> UAH

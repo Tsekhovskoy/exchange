@@ -1,8 +1,6 @@
 <?php
 
-//require_once $_SERVER['DOCUMENT_ROOT'].'/exchange/models/Db_connection.php';
 require_once ('./../models/Db_connection.php');
-//require_once $_SERVER['DOCUMENT_ROOT'].'/exchange/helpers/cleaner.php';
 require_once ('./../helpers/cleaner.php');
 
 /**
