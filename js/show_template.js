@@ -4,7 +4,7 @@
  */
 
 $( document ).ready(function() {
-    getAjaxData( './../controllers/setcourse.php');
+    getAjaxData( './../controllers/loadcourse.php');
 });
 
 function getAjaxData(url) {
@@ -22,7 +22,7 @@ function getAjaxData(url) {
                     '</a></td></tr>');
             }
         },
-        error: function(response) {
+        error: function() {
             swal("Server's problem!", "Tell to your system administrator!", "error");
         }
     });

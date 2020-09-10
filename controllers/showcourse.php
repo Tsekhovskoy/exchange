@@ -2,7 +2,7 @@
 
 /**
  * The actual course viewing controller. Controller firstly check the force course ("execute" method from the Get_valid.php model).
- * If force course date valid, controller calls "execute" method from Get_valid model and get the actual course from database.
+ * If force course date valid, controller gets the actual course from database.
  * If force course date not valid, controller calls "execute" method from Get_course model and get course from NBU api.
  */
 

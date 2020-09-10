@@ -3,6 +3,10 @@
  * Block calls from /view/template.php
  */
 
+$(document).ready(function() {
+    executeQuery();
+});
+
 function executeQuery() {
     $.ajax({
         url         : './controllers/showcourse.php',
@@ -12,13 +16,13 @@ function executeQuery() {
                 $('#course').text('1 USD: ' + data.course + 'UAH');
             }
             else {
-                $('#course').text('Error');
+                $('#course').text('Error! Sorry, we are resolving this problem right now!');
             }
+        },
+        error: function() {
+            swal("Server's problem!", "We are working on this problem now!", "error");
         }
     });
-    setTimeout(executeQuery, 50000);
+    setTimeout(executeQuery, 60000);
 }
-    $(document).ready(function() {
-    executeQuery();
-    setTimeout(executeQuery, 50000);
-});
+

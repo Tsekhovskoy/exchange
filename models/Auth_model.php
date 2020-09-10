@@ -37,19 +37,23 @@ class Auth_model
     }
 
     /**
-     * @return bool
+     * @return string
      * Access validation
      */
-    public function load() {
+    public function load()
+    {
         $sql = 'SELECT * FROM admin';
         $result = $this->connection->query($sql, []);
-
-        foreach ($result as $value) {
-            if (($value['name'] === $this->data['name']) && ((md5($this->data['password'].self::SALT) === $value['password']))) {
-                return true;
-            } else {
-                return false;
+        if ($result) {
+            foreach ($result as $value) {
+                if (($value['name'] === $this->data['name']) && ((md5($this->data['password'] . self::SALT) === $value['password']))) {
+                    return 'Success';
+                } else {
+                    return 'Error';
+                }
             }
+        } else {
+            return 'Empty';
         }
     }
 

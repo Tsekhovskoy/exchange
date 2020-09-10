@@ -40,7 +40,7 @@ function sendAjaxForm(set_course, url) {
             }
             swal("Added!", "Cross course created.", "success");
         },
-        error: function(response) {
+        error: function() {
             swal("Course Not Added!", "No course added. Check your internet connection or contact technical support.", "error");
             $('#set_course')[0].reset();
         }

@@ -7,13 +7,15 @@ require_once ('./../helpers/cleaner.php');
 
 /**
  * Class Set_course
- * Class sets new force course to database and get the force course list
+ * Class sets a new force course to database and get the force course list
  */
 
 class Set_course
 {
     protected $connection;
     protected $data;
+    protected $stopdate;
+    public $cleaner;
 
     /**
      * Set_course constructor.
@@ -24,39 +26,23 @@ class Set_course
         $this->connection = $connection;
         if($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST["datetime"]) && isset($_POST["forcecourse"])) {
-                $dat = date("Y-m-d H:i:s", strtotime($_POST["datetime"]));
-//                if ($dat < date('Y-m-d H:i:s')) {
-//                    return ('Enter correct date and time');
-//                }
-//                $ndate = new DateTime($dat);
+                $this->stopdate = date("Y-m-d H:i:s", strtotime($_POST["datetime"]));
+                $this->cleaner = new Cleaner();
                 $this->data = array(
-                    'stopdate' => $this->cleanData($dat),
-                    'forcecourse' => $this->cleanData($_POST["forcecourse"]),
+                    'stopdate' => $this->cleaner->cleanData($this->stopdate),
+                    'forcecourse' => $this->cleaner->cleanData($_POST["forcecourse"]),
                 );
             }
         }
     }
 
     /**
-     * @param $data
-     * @return string
-     */
-    public function cleanData($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    /**
      * Set entered force course parameters to database
      */
     public function save() {
-
-        $sql = 'INSERT INTO force_course (stopdate, course) VALUES (?, ?)';
-        $result = $this->connection->query($sql, [$this->data['stopdate'], $this->data['forcecourse']]);
+            $sql = 'INSERT INTO force_course (stopdate, course) VALUES (?, ?)';
+            $this->connection->query($sql, [$this->data['stopdate'], $this->data['forcecourse']]);
     }
-
     /**
      * Get the force course list
      */
@@ -66,6 +52,8 @@ class Set_course
 
         if (count($result)) {
             echo json_encode($result);
+        } else {
+            http_response_code(404);
         }
     }
 

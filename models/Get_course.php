@@ -31,7 +31,7 @@ class Get_course
             }
         }
         else {
-            $result['course'] = 0;
+            http_response_code(404);
         }
         return $result;
     }
