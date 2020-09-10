@@ -11,9 +11,9 @@ class Db_connection
     public $pdo;
     //Enter your mysql-server information here
     protected $dbName = 'exchange';
-    protected $user = 'root';
-    protected $password = '2151';
-    protected $host = '127.0.0.1';
+    protected $user = 'exchange';
+    protected $password = '4L8m9R0r';
+    protected $host = 'exchange.devtestnet.com';
 
     /**
      * Db_connection constructor.

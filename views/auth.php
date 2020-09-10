@@ -10,7 +10,7 @@
 <body>
 <div align="center">
     <h2>Please enter your login name and password</h2>
-        <form action="/exchange/controllers/adminlogin.php" method="post">
+        <form action="./../../controllers/adminlogin.php" method="post">
             <div class="container">
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
