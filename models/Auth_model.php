@@ -42,17 +42,18 @@ class Auth_model
     {
         $sql = 'SELECT * FROM admin';
         $result = $this->connection->query($sql, []);
+
         if ($result) {
+            $status = 'Error';
             foreach ($result as $value) {
                 if (($value['name'] === $this->data['name']) && ((md5($this->data['password'] . self::SALT) === $value['password']))) {
-                    return 'Success';
-                } else {
-                    return 'Error';
+                    $status = 'Success';
                 }
             }
         } else {
-            return 'Empty';
+            $status = 'Empty';
         }
+        return $status;
     }
 
     public function execute() {

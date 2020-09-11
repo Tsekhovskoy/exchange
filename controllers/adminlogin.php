@@ -9,13 +9,13 @@ require_once ('./../models/Auth_model.php');
 
 $authModel = new Auth_model(Db_connection::getInstance());
 $status = $authModel->execute();
+
 if ($status == 'Success') {
     require_once ('./../views/set_course.php');
 } elseif ($status == 'Error') {
     echo '<p style="color: red">Sorry, check your login or password</p>';
     require_once ('./../views/auth.php');
-}
-elseif ($status == 'Empty') {
+} elseif ($status == 'Empty') {
     echo '<p style="color: red">Sorry, the server crashed</p>';
     require_once ('./../views/auth.php');
 }

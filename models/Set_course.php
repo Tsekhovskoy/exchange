@@ -22,6 +22,7 @@ class Set_course
     public function __construct(Db_connection $connection)
     {
         $this->connection = $connection;
+
         if($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST["datetime"]) && isset($_POST["forcecourse"])) {
                 $this->stopdate = date("Y-m-d H:i:s", strtotime($_POST["datetime"]));
@@ -40,7 +41,23 @@ class Set_course
     public function save() {
             $sql = 'INSERT INTO force_course (stopdate, course) VALUES (?, ?)';
             $this->connection->query($sql, [$this->data['stopdate'], $this->data['forcecourse']]);
+
+            if(!$this->isSaved()) {
+                http_response_code(404);
+            }
     }
+
+    public function isSaved() {
+        $sql = 'SELECT * FROM force_course WHERE stopdate=? AND course=?';
+        $result = $this->connection->query($sql, [$this->data['stopdate'], $this->data['forcecourse']]);
+
+        if (count($result)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Get the force course list
      */

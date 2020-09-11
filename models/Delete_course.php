@@ -21,8 +21,13 @@ class Delete_course
     public function __construct(Db_connection $connection)
     {
         $this->connection = $connection;
-        $this->cleaner = new Cleaner();
-        $this->id = $this->cleaner->cleanData($_POST["id"]);
+
+        if($_SERVER['REQUEST_METHOD'] == "POST") {
+            if (isset($_POST["id"])) {
+                $this->cleaner = new Cleaner();
+                $this->id = $this->cleaner->cleanData($_POST["id"]);
+            }
+        }
     }
 
     /**

@@ -23,6 +23,6 @@ function executeQuery() {
             swal("Server's problem!", "We are working on this problem now!", "error");
         }
     });
-    setTimeout(executeQuery, 60000);
+    setTimeout(executeQuery, 10000);
 }
 

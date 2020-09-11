@@ -21,19 +21,20 @@ class Get_course
         curl_setopt($curl, CURLOPT_URL, $url);
         $response = curl_exec($curl);
         curl_close($curl);
-        $content = json_decode($response, true);
-        if ($content) {
+
+        if ($response) {
+            $content = json_decode($response, true);
             $result = [];
             foreach ($content as $value) {
                 if ($value['r030'] == 840) {
                     $result['course'] = $value['rate'];
                 }
             }
+            return $result;
         }
         else {
             http_response_code(404);
         }
-        return $result;
     }
 
     /**
