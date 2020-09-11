@@ -29,14 +29,14 @@ class Set_course
                 $this->cleaner = new Cleaner();
                 $this->data = array(
                     'stopdate' => $this->cleaner->cleanData($this->stopdate),
-                    'forcecourse' => $this->cleaner->cleanData($_POST["forcecourse"]),
+                    'forcecourse' => (float)$this->cleaner->cleanData($_POST["forcecourse"]),
                 );
             }
         }
     }
 
     /**
-     * Set entered force course parameters to database
+     * Set entered force course parameters to database and call "isSaved" method from recording process validation
      */
     public function save() {
             $sql = 'INSERT INTO force_course (stopdate, course) VALUES (?, ?)';
@@ -47,8 +47,12 @@ class Set_course
             }
     }
 
+    /**
+     * @return bool
+     * Method checks - is exist the record inside database. If doesn't - false will return
+     */
     public function isSaved() {
-        $sql = 'SELECT * FROM force_course WHERE stopdate=? AND course=?';
+        $sql = 'SELECT * FROM force_course WHERE stopdate=? AND CAST(course AS DECIMAL(5,2)) =?';
         $result = $this->connection->query($sql, [$this->data['stopdate'], $this->data['forcecourse']]);
 
         if (count($result)) {
