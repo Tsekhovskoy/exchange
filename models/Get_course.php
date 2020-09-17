@@ -32,9 +32,6 @@ class Get_course
             }
             return $result;
         }
-        else {
-            http_response_code(404);
-        }
     }
 
     /**

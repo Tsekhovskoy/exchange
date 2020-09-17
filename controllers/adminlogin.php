@@ -5,8 +5,8 @@
  * Controllers calls from /views/auth.php
  */
 
-require_once ('./../models/Auth_model.php');
-
+//require_once ('./../models/Auth_model.php');
+use models\Auth_model;
 $authModel = new Auth_model(Db_connection::getInstance());
 $status = $authModel->execute();
 

@@ -1,31 +1,29 @@
 <?php
 
-require_once ('./../models/Db_connection.php');
+require_once('./../components/Db_connection.php');
 require_once ('./../helpers/cleaner.php');
+require_once ('./../models/Abstract_model.php');
 
 /**
  * Class Delete_course
  * Class removes an force course record by its ID.
  */
 
-class Delete_course
+class Delete_course extends Abstract_model
 {
     protected $id;
-    protected $connection;
-    public $cleaner;
 
     /**
      * Delete_course constructor.
-     * @param Db_connection $connection
+     * @param DBConnectionInterface $connection
      */
-    public function __construct(Db_connection $connection)
+    public function __construct(DBConnectionInterface $connection)
     {
-        $this->connection = $connection;
+        parent::__construct($connection);
 
         if($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST["id"])) {
-                $this->cleaner = new Cleaner();
-                $this->id = $this->cleaner->cleanData($_POST["id"]);
+                $this->id = Cleaner::cleanData($_POST["id"]);
             }
         }
     }

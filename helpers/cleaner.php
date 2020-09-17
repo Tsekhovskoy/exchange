@@ -7,7 +7,7 @@
  */
 class Cleaner
 {
-    public function cleanData($data)
+    public static function cleanData($data)
     {
         $data = trim($data);
         $data = stripslashes($data);

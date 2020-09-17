@@ -19,4 +19,6 @@ if (empty($newCourse)) {
 
 if(!empty($newCourse)) {
     echo json_encode($newCourse);
+} else {
+    http_response_code(404);
 }

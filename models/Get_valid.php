@@ -1,24 +1,15 @@
 <?php
 
-require_once ('./../models/Db_connection.php');
+require_once('./../components/Db_connection.php');
+require_once ('./../models/Abstract_model.php');
 
 /**
  * Class Get_valid
  * Class does the sql request and looks for valid force course in the database
  */
 
-class Get_valid
+class Get_valid extends Abstract_model
 {
-    protected $connection;
-
-    /**
-     * Get_valid constructor.
-     * @param Db_connection $connection
-     */
-    public function __construct(Db_connection $connection)
-    {
-        $this->connection = $connection;
-    }
 
     /**
      * @return false

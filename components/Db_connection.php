@@ -5,23 +5,34 @@
  * The database connection class. Enter your sql-server parameters here
  */
 
-class Db_connection
+interface DBConnectionInterface {
+    public static function getInstance();
+}
+
+class Db_connection implements DBConnectionInterface
 {
     private static $instance;
     public $pdo;
     //Enter your mysql-server information here
-    protected $dbName = 'exchange';
-    protected $user = 'exchange';
-    protected $password = '4L8m9R0r';
-    protected $host = 'exchange.devtestnet.com';
+//    protected $dbName = 'exchange';
+//    protected $user = 'exchange';
+//    protected $password = '4L8m9R0r';
+//    protected $host = 'exchange.devtestnet.com';
 
     /**
      * Db_connection constructor.
      */
     private function __construct()
     {
-        $dsn = "mysql:host=$this->host; dbname=$this->dbName";
-        $this->pdo = new PDO($dsn, $this->user, $this->password);
+        set_include_path($_SERVER['DOCUMENT_ROOT'] . "/exchange");
+        require 'vendor/autoload.php';
+        $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+        $dotenv->load();
+        $host = $_ENV['DB_HOST'];
+        $name = $_ENV['DB_NAME'];
+
+        $dsn = "mysql:host=$host; dbname=$name";
+        $this->pdo = new PDO($dsn, $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
     }
 
     /**

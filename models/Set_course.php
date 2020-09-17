@@ -1,35 +1,35 @@
 <?php
 
-require_once ('./../models/Db_connection.php');
-require_once ('./../helpers/cleaner.php');
+set_include_path($_SERVER['DOCUMENT_ROOT'] . "/exchange");
+require_once('components/Db_connection.php');
+require_once ('helpers/cleaner.php');
+require_once ('./../models/Abstract_model.php');
 
 /**
  * Class Set_course
  * Class sets a new force course to database and get the force course list
  */
 
-class Set_course
+class Set_course extends Abstract_model
 {
-    protected $connection;
+
     protected $data;
     protected $stopdate;
-    public $cleaner;
 
     /**
      * Set_course constructor.
-     * @param Db_connection $connection
+     * @param DBConnectionInterface $connection
      */
-    public function __construct(Db_connection $connection)
+    public function __construct(DBConnectionInterface $connection)
     {
-        $this->connection = $connection;
+        parent::__construct($connection);
 
         if($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST["datetime"]) && isset($_POST["forcecourse"])) {
                 $this->stopdate = date("Y-m-d H:i:s", strtotime($_POST["datetime"]));
-                $this->cleaner = new Cleaner();
                 $this->data = array(
-                    'stopdate' => $this->cleaner->cleanData($this->stopdate),
-                    'forcecourse' => (float)$this->cleaner->cleanData($_POST["forcecourse"]),
+                    'stopdate' => Cleaner::cleanData($this->stopdate),
+                    'forcecourse' => (float)Cleaner::cleanData($_POST["forcecourse"]),
                 );
             }
         }
@@ -71,8 +71,6 @@ class Set_course
 
         if (count($result)) {
             echo json_encode($result);
-        } else {
-            http_response_code(404);
         }
     }
 

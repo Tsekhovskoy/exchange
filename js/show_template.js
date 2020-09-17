@@ -4,7 +4,7 @@
  */
 
 $( document ).ready(function() {
-    getAjaxData( './../controllers/loadcourse.php');
+    getAjaxData( '/exchange/controllers/loadcourse.php');
 });
 
 function getAjaxData(url) {
@@ -23,7 +23,7 @@ function getAjaxData(url) {
             }
         },
         error: function() {
-            swal("Server's problem!", "Tell to your system administrator!", "error");
+            swal("No force course have been added yet!", "You can add a new one", "warning");
         }
     });
 }

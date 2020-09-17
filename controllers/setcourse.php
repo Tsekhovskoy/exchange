@@ -5,7 +5,9 @@
  * Controller calls from /js/add_course.js
  */
 
-require_once ('./../models/Set_course.php');
+set_include_path($_SERVER['DOCUMENT_ROOT'] . "/exchange");
+
+require_once ('models/Set_course.php');
 
 $forceModel = new Set_course(Db_connection::getInstance());
 $forceModel->execute();

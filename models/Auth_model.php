@@ -1,34 +1,31 @@
 <?php
 
-require_once ('./../models/Db_connection.php');
+require_once('./../components/Db_connection.php');
 require_once ('./../helpers/cleaner.php');
+require_once ('./../models/Abstract_model.php');
 
 /**
  * Class Auth_model
  * Class gets $_POST parameters from admin authorisation form (/view/auth.php) and does login/password validation
  */
 
-class Auth_model
+class Auth_model extends Abstract_model
 {
     protected const SALT = 'change';
-    protected $connection;
     protected $data;
-    public $cleaner;
 
     /**
      * Auth_model constructor.
-     * @param Db_connection $connection
      */
-    public function __construct(Db_connection $connection)
+    public function __construct(DBConnectionInterface $connection)
     {
-        $this->connection = $connection;
+        parent::__construct($connection);
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (isset($_POST['uname']) && isset($_POST['psw'])) {
-                $this->cleaner = new Cleaner();
                 $this->data = array(
-                    'name' => $this->cleaner->cleanData($_POST['uname']),
-                    'password' => $this->cleaner->cleanData($_POST['psw'])
+                    'name' => Cleaner::cleanData($_POST['uname']),
+                    'password' => Cleaner::cleanData($_POST['psw'])
                 );
             }
         }
@@ -47,6 +44,10 @@ class Auth_model
             $status = 'Error';
             foreach ($result as $value) {
                 if (($value['name'] === $this->data['name']) && ((md5($this->data['password'] . self::SALT) === $value['password']))) {
+                    ini_set('session.gc_maxlifetime', 60);
+                    session_start();
+                    $_SESSION['user'] = $this->data['name'];
+                    $path = session_save_path();
                     $status = 'Success';
                 }
             }

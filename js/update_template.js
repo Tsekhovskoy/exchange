@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 function executeQuery() {
     $.ajax({
-        url         : './controllers/showcourse.php',
+        url         : 'controllers/showcourse.php',
         dataType    : 'json',
         success: function(data) {
             if (data.course > 0) {

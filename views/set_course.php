@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>The better exchange for you</title>
-    <link href="./../css/default.css" rel="stylesheet"/>
+    <link href="/exchange/css/default.css" rel="stylesheet"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript" src="./../js/show_template.js"></script>
-    <script type="text/javascript" src="./../js/add_course.js"></script>
-    <script type="text/javascript" src="./../js/delete_course.js"></script>
+    <script type="text/javascript" src="/exchange/js/show_template.js"></script>
+    <script type="text/javascript" src="/exchange/js/add_course.js"></script>
+    <script type="text/javascript" src="/exchange/js/delete_course.js"></script>
 </head>
 
 <body>

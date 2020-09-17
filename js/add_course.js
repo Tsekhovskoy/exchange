@@ -9,7 +9,7 @@ $( document ).ready(function() {
     $(".force_btn").click(
         function(){
             if($('#datetime').val() && $('#forcecourse').val()) {
-                sendAjaxForm('set_course', './../controllers/setcourse.php');
+                sendAjaxForm('set_course', '/exchange/controllers/setcourse.php');
             } else {
                 swal("Required fields are empty!", "Fill in the form, please", "error");
             }
