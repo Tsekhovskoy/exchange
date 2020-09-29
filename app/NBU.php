@@ -1,17 +1,17 @@
 <?php
 
+namespace app;
+
 /**
- * Class Get_course
+ * Class NBU
  * Class get actually course from NBU api
  */
-
-class Get_course
+class NBU
 {
     /**
      * @return array
-     * Metod get valid course from NBU api
      */
-    public function getNBUCourse()
+    public static function getNBUCourse()
     {
         $url = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
         $curl = curl_init();
@@ -32,14 +32,5 @@ class Get_course
             }
             return $result;
         }
-    }
-
-    /**
-     * @return array
-     * The execute method
-     */
-    public function execute() {
-        $course = $this->getNBUCourse();
-        return $course;
     }
 }

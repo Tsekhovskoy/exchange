@@ -1,6 +1,6 @@
 /**
  * Adding a new force course and rendering actual force courses without reloading the page.
- * After clicking on the Submit button (see /views/set_course.php) form with data send to setcourse.php controller.
+ * After clicking on the Submit button (see /views/set_course.php) form with data send to Set.php controller.
  * Callable ajax function update force course records without page reloading.
  * Block calls from /views/set_course.php
  */
@@ -9,7 +9,7 @@ $( document ).ready(function() {
     $(".force_btn").click(
         function(){
             if($('#datetime').val() && $('#forcecourse').val()) {
-                sendAjaxForm('set_course', '/exchange/controllers/setcourse.php');
+                sendAjaxForm('set_course', '/force/add');
             } else {
                 swal("Required fields are empty!", "Fill in the form, please", "error");
             }

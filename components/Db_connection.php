@@ -1,14 +1,13 @@
 <?php
 
-/**
- * Class Db_connection
- * The database connection class. Enter your sql-server parameters here
- */
-
 interface DBConnectionInterface {
     public static function getInstance();
 }
 
+/**
+ * Class Db_connection
+ * The database connection class.
+ */
 class Db_connection implements DBConnectionInterface
 {
     private static $instance;
@@ -24,8 +23,9 @@ class Db_connection implements DBConnectionInterface
      */
     private function __construct()
     {
-        set_include_path($_SERVER['DOCUMENT_ROOT'] . "/exchange");
-        require 'vendor/autoload.php';
+
+        require_once (ROOT . "/vendor/autoload.php");
+
         $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
         $dotenv->load();
         $host = $_ENV['DB_HOST'];

@@ -1,5 +1,5 @@
 <?php
-
+namespace helpers;
 /**
  * Class Cleaner
  * Do a security checking of $_POST-given parameters

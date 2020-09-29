@@ -3,10 +3,10 @@
  *The main page ("/") input point. Load the force course template (views/template.php)
  */
 
-define('ROOT', dirname(__FILE__));
+define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 
-require_once ('./views/template.php');
-//$url = $_SERVER['REQUEST_URI'];
-//$url = trim($url, '/');
-//$url = explode('/', $url);
-//var_dump($url);
+require_once (ROOT . '/app/autoload.php');
+use app\Router;
+
+$router = new Router();
+$router->run();

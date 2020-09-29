@@ -6,7 +6,7 @@
 $( document ).ready(function() {
     $(document).on('click','.actbox', function () {
             var id = $(this).find('.bcross').attr('data-id');
-            dellById(id, '/exchange/controllers/deletecourse.php');
+            dellById(id, '/force/delete');
         }
     );
 });

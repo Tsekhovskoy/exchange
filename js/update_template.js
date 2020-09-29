@@ -9,9 +9,11 @@ $(document).ready(function() {
 
 function executeQuery() {
     $.ajax({
-        url         : 'controllers/showcourse.php',
+        url         : '/template/update',
         dataType    : 'json',
+        type: "POST",
         success: function(data) {
+            console.log(data.course);
             if (data.course > 0) {
                 $('#course').text('1 USD: ' + data.course + 'UAH');
             }
@@ -19,10 +21,11 @@ function executeQuery() {
                 $('#course').text('Error! Sorry, we are resolving this problem right now!');
             }
         },
-        error: function() {
+        error: function(res) {
+            console.log(res);
             swal("Server's problem!", "We are working on this problem now!", "error");
         }
     });
-    setTimeout(executeQuery, 10000);
+    setTimeout(executeQuery, 6000);
 }
 

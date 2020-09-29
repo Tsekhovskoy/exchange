@@ -1,9 +1,15 @@
 <?php
 
-set_include_path($_SERVER['DOCUMENT_ROOT'] . "/exchange");
-require_once('components/Db_connection.php');
-require_once ('helpers/cleaner.php');
-require_once ('./../models/Abstract_model.php');
+require_once (ROOT . "/components/Db_connection.php");
+
+use helpers\Cleaner;
+use models\Abstract_model;
+
+//set_include_path($_SERVER['DOCUMENT_ROOT'] . "/exchange");
+//require_once('components/Db_connection.php');
+//require_once ('helpers/Cleaner.php');
+//require_once ('./../models/Abstract_model.php');
+//require_once ($_SERVER['DOCUMENT_ROOT'] . "/models/Abstract_model.php");
 
 /**
  * Class Set_course

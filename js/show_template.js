@@ -4,7 +4,7 @@
  */
 
 $( document ).ready(function() {
-    getAjaxData( '/exchange/controllers/loadcourse.php');
+    getAjaxData( '/force/show');
 });
 
 function getAjaxData(url) {

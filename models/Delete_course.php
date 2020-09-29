@@ -1,8 +1,10 @@
 <?php
 
-require_once('./../components/Db_connection.php');
-require_once ('./../helpers/cleaner.php');
-require_once ('./../models/Abstract_model.php');
+require_once (ROOT . "/components/Db_connection.php");
+
+use helpers\Cleaner;
+use models\Abstract_model;
+
 
 /**
  * Class Delete_course

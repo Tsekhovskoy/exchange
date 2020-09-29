@@ -5,9 +5,15 @@
  * Controller calls from /js/add_course.js
  */
 
-set_include_path($_SERVER['DOCUMENT_ROOT'] . "/exchange");
+require_once (ROOT . "/models/Set_course.php");
 
-require_once ('models/Set_course.php');
-
-$forceModel = new Set_course(Db_connection::getInstance());
-$forceModel->execute();
+/**
+ * Class Set
+ */
+class Set
+{
+    public function actionSet() {
+        $forceModel = new Set_course(Db_connection::getInstance());
+        $forceModel->execute();
+    }
+}

@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Current course</title>
-    <link href="./css/default.css" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript" src="./js/update_template.js"></script>
+    <link href="/css/default.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -15,5 +12,8 @@
     <div>
         <p id="course" align="center">Course will be updated soon</p>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/js/update_template.js"></script>
 </body>
 </html>
