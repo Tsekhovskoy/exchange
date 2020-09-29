@@ -1,16 +1,13 @@
 <?php
 
-require_once (ROOT . "/components/Db_connection.php");
-
-use helpers\Cleaner;
-use models\Abstract_model;
-
+require_once(ROOT . "/app/Db_connection.php");
+require_once (ROOT . "/helpers/Cleaner.php");
+require_once (ROOT . "/models/Abstract_model.php");
 
 /**
  * Class Delete_course
  * Class removes an force course record by its ID.
  */
-
 class Delete_course extends Abstract_model
 {
     protected $id;
@@ -19,7 +16,7 @@ class Delete_course extends Abstract_model
      * Delete_course constructor.
      * @param DBConnectionInterface $connection
      */
-    public function __construct(DBConnectionInterface $connection)
+    public function __construct($connection)
     {
         parent::__construct($connection);
 

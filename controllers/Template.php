@@ -1,6 +1,6 @@
 <?php
 
-use app\View;
+require_once (ROOT . "/app/View.php");
 
 class Template
 {

@@ -1,16 +1,13 @@
 <?php
 
-
-require_once (ROOT . "/components/Db_connection.php");
-
-use helpers\Cleaner;
-use models\Abstract_model;
+require_once(ROOT . "/app/Db_connection.php");
+require_once (ROOT . "/helpers/Cleaner.php");
+require_once (ROOT . "/models/Abstract_model.php");
 
 /**
  * Class Auth_model
  * Class gets $_POST parameters from admin authorisation form (/view/auth.php) and does login/password validation
  */
-
 class Auth_model extends Abstract_model
 {
     protected const SALT = 'change';
@@ -20,7 +17,7 @@ class Auth_model extends Abstract_model
      * Auth_model constructor.
      * @param DBConnectionInterface $connection
      */
-    public function __construct(DBConnectionInterface $connection)
+    public function __construct($connection)
     {
         parent::__construct($connection);
 

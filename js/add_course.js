@@ -8,7 +8,7 @@
 $( document ).ready(function() {
     $(".force_btn").click(
         function(){
-            if($('#datetime').val() && $('#forcecourse').val()) {
+            if($('#date').val() && $('#time').val() && $('#forcecourse').val()) {
                 sendAjaxForm('set_course', '/force/add');
             } else {
                 swal("Required fields are empty!", "Fill in the form, please", "error");

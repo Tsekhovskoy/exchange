@@ -1,17 +1,14 @@
 <?php
 
-require_once (ROOT . "/components/Db_connection.php");
-
-use models\Abstract_model;
+require_once(ROOT . "/app/Db_connection.php");
+require_once (ROOT . "/models/Abstract_model.php");
 
 /**
  * Class Get_valid
  * Class does the sql request and looks for valid force course in the database
  */
-
 class Get_valid extends Abstract_model
 {
-
     /**
      * @return false
      * Method check valid force course

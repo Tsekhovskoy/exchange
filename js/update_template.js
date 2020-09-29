@@ -15,7 +15,7 @@ function executeQuery() {
         success: function(data) {
             console.log(data.course);
             if (data.course > 0) {
-                $('#course').text('1 USD: ' + data.course + 'UAH');
+                $('#course').text('1 USD: ' + data.course + ' UAH');
             }
             else {
                 $('#course').text('Error! Sorry, we are resolving this problem right now!');

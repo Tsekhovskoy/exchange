@@ -1,7 +1,5 @@
 <?php
 
-namespace app;
-
 /**
  * Class Router. Parse an entered link to controller name and action name. Call found action in controller
  * @package app

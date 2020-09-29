@@ -1,7 +1,5 @@
 <?php
 
-namespace app;
-
 /**
  * Class View
  * @package app

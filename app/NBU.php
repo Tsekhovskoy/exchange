@@ -1,7 +1,5 @@
 <?php
 
-namespace app;
-
 /**
  * Class NBU
  * Class get actually course from NBU api

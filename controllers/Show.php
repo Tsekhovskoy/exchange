@@ -7,8 +7,7 @@
  */
 
 require_once (ROOT . "/models/Get_valid.php");
-
-use app\NBU;
+require_once (ROOT . "/app/NBU.php");
 
 class Show
 {

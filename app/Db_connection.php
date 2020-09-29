@@ -12,11 +12,6 @@ class Db_connection implements DBConnectionInterface
 {
     private static $instance;
     public $pdo;
-    //Enter your mysql-server information here
-//    protected $dbName = 'exchange';
-//    protected $user = 'exchange';
-//    protected $password = '4L8m9R0r';
-//    protected $host = 'exchange.devtestnet.com';
 
     /**
      * Db_connection constructor.
@@ -24,9 +19,9 @@ class Db_connection implements DBConnectionInterface
     private function __construct()
     {
 
-        require_once (ROOT . "/vendor/autoload.php");
+        require_once(ROOT . "/vendor/autoload.php");
 
-        $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+        $dotenv = \Dotenv\Dotenv::createImmutable(ROOT);
         $dotenv->load();
         $host = $_ENV['DB_HOST'];
         $name = $_ENV['DB_NAME'];

@@ -1,21 +1,14 @@
 <?php
 
-require_once (ROOT . "/components/Db_connection.php");
+require_once(ROOT . "/app/Db_connection.php");
+require_once (ROOT . "/helpers/Cleaner.php");
+require_once (ROOT . "/models/Abstract_model.php");
 
-use helpers\Cleaner;
-use models\Abstract_model;
-
-//set_include_path($_SERVER['DOCUMENT_ROOT'] . "/exchange");
-//require_once('components/Db_connection.php');
-//require_once ('helpers/Cleaner.php');
-//require_once ('./../models/Abstract_model.php');
-//require_once ($_SERVER['DOCUMENT_ROOT'] . "/models/Abstract_model.php");
 
 /**
  * Class Set_course
  * Class sets a new force course to database and get the force course list
  */
-
 class Set_course extends Abstract_model
 {
 
@@ -26,13 +19,14 @@ class Set_course extends Abstract_model
      * Set_course constructor.
      * @param DBConnectionInterface $connection
      */
-    public function __construct(DBConnectionInterface $connection)
+    public function __construct($connection)
     {
         parent::__construct($connection);
 
         if($_SERVER['REQUEST_METHOD'] == "POST") {
-            if (isset($_POST["datetime"]) && isset($_POST["forcecourse"])) {
-                $this->stopdate = date("Y-m-d H:i:s", strtotime($_POST["datetime"]));
+            if (isset($_POST["date"]) && isset($_POST["time"]) && isset($_POST["forcecourse"])) {
+                $dateTime = $_POST["date"] . ' ' . $_POST["time"];
+                $this->stopdate = date("Y-m-d H:i:s", strtotime($dateTime));
                 $this->data = array(
                     'stopdate' => Cleaner::cleanData($this->stopdate),
                     'forcecourse' => (float)Cleaner::cleanData($_POST["forcecourse"]),
