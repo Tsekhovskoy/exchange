@@ -22,10 +22,12 @@ class Router
 
     public function run() {
         $uri = $this->getURI();
+        $status = false;
 
         foreach ($this->routes as $uriPattern => $path) {
 
-            if (preg_match("~$uriPattern~", $uri)) {
+            if (preg_match("~$uriPattern~", $uri) && $uriPattern == $uri) {
+                $status = true;
                 $path = $path[0];
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
                 $segments = explode('/', $internalRoute);
@@ -44,6 +46,9 @@ class Router
                 break;
                 }
             }
+        if(!$status) {
+            header("Location: /errors/errors", true, 301);
         }
+    }
 
 }

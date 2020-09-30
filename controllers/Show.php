@@ -20,6 +20,7 @@ class Show
         }
 
         if (!empty($newCourse)) {
+
            echo json_encode($newCourse, JSON_UNESCAPED_UNICODE);
         } else {
             http_response_code(404);

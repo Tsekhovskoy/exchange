@@ -1,6 +1,5 @@
 <?php
 
-require_once(ROOT . "/app/Db_connection.php");
 require_once (ROOT . "/helpers/Cleaner.php");
 require_once (ROOT . "/models/Abstract_model.php");
 

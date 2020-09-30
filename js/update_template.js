@@ -23,7 +23,7 @@ function executeQuery() {
         },
         error: function(res) {
             console.log(res);
-            swal("Server's problem!", "We are working on this problem now!", "error");
+            swal("NBU server's problem!", "We are working on this problem now!", "error");
         }
     });
     setTimeout(executeQuery, 6000);

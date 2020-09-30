@@ -1,6 +1,5 @@
 <?php
 
-require_once(ROOT . "/app/Db_connection.php");
 require_once (ROOT . "/helpers/Cleaner.php");
 require_once (ROOT . "/models/Abstract_model.php");
 
@@ -44,10 +43,11 @@ class Auth_model extends Abstract_model
             $status = 'Error';
             foreach ($result as $value) {
                 if (($value['name'] === $this->data['name']) && ((md5($this->data['password'] . self::SALT) === $value['password']))) {
-                    ini_set('session.gc_maxlifetime', 1);
-                    session_start();
-                    $_SESSION['user'] = $this->data['name'];
-                    $path = session_save_path();
+//                    if(session_id() == '') {
+//                        ini_set('session.gc_maxlifetime', 100);
+                        session_start();
+                        $_SESSION['user'] = $this->data['name'];
+//                    }
                     $status = 'Success';
                 }
             }
