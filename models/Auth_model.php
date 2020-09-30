@@ -43,11 +43,12 @@ class Auth_model extends Abstract_model
             $status = 'Error';
             foreach ($result as $value) {
                 if (($value['name'] === $this->data['name']) && ((md5($this->data['password'] . self::SALT) === $value['password']))) {
-//                    if(session_id() == '') {
-//                        ini_set('session.gc_maxlifetime', 100);
+                   if(!isset($_SESSION)) {
+                        ini_set('session.gc_maxlifetime', 60);
                         session_start();
                         $_SESSION['user'] = $this->data['name'];
-//                    }
+                        session_write_close();
+                    }
                     $status = 'Success';
                 }
             }

@@ -6,11 +6,12 @@
  */
 
 require_once (ROOT . "/models/Set_course.php");
+require_once (ROOT . "/controllers/AbstractController.php");
 
 /**
  * Class Set
  */
-class Set
+class Set extends AbstractController
 {
     public function actionSet() {
         $forceModel = new Set_course(Db_connection::getInstance());

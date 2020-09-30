@@ -7,17 +7,17 @@
 
 require_once (ROOT . "/app/View.php");
 require_once (ROOT . "/models/Auth_model.php");
+require_once (ROOT . "/controllers/AbstractController.php");
 
 /**
  * Class Login
  */
-class Login
+class Login extends AbstractController
 {
     public function actionLogin() {
         session_start();
-
         if (isset($_SESSION['user'])) {
-            require_once('views/set_course.php');
+            View::render('set_course');
         } else {
             $authModel = new Auth_model(Db_connection::getInstance());
             $status = $authModel->execute();
@@ -32,6 +32,7 @@ class Login
                 View::render('auth');
             }
         }
+        session_write_close();
     }
 }
 

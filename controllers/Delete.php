@@ -6,11 +6,12 @@
  */
 
 require_once (ROOT . "/models/Delete_course.php");
+require_once (ROOT . "/controllers/AbstractController.php");
 
 /**
  * Class Delete
  */
-class Delete
+class Delete extends AbstractController
 {
     public function actionDelete() {
         $deleteModel = new Delete_course(Db_connection::getInstance());

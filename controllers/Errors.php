@@ -1,8 +1,9 @@
 <?php
 
 require_once(ROOT . "/app/View.php");
+require_once (ROOT . "/controllers/AbstractController.php");
 
-class Errors
+class Errors extends AbstractController
 {
     public function actionErrors()
     {

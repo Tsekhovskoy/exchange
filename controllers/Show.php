@@ -8,8 +8,9 @@
 
 require_once (ROOT . "/models/Get_valid.php");
 require_once (ROOT . "/app/NBU.php");
+require_once (ROOT . "/controllers/AbstractController.php");
 
-class Show
+class Show extends AbstractController
 {
     public function actionShow() {
         $courseModel = new Get_valid(Db_connection::getInstance());
