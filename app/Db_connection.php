@@ -18,7 +18,6 @@ class Db_connection implements DBConnectionInterface
      */
     private function __construct()
     {
-
         require_once(ROOT . "/vendor/autoload.php");
 
         $dotenv = \Dotenv\Dotenv::createImmutable(ROOT);

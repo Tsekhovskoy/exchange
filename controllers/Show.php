@@ -10,6 +10,9 @@ require_once (ROOT . "/models/Get_valid.php");
 require_once (ROOT . "/app/NBU.php");
 require_once (ROOT . "/controllers/AbstractController.php");
 
+/**
+ * Class Show
+ */
 class Show extends AbstractController
 {
     public function actionShow() {
@@ -21,7 +24,6 @@ class Show extends AbstractController
         }
 
         if (!empty($newCourse)) {
-
            echo json_encode($newCourse, JSON_UNESCAPED_UNICODE);
         } else {
             http_response_code(404);
