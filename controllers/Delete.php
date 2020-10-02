@@ -14,7 +14,7 @@ require_once (ROOT . "/controllers/AbstractController.php");
 class Delete extends AbstractController
 {
     public function actionDelete() {
-        $deleteModel = new Delete_course(Db_connection::getInstance());
+        $deleteModel = new Delete_course();
         $deleteModel->execute();
     }
 }

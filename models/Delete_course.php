@@ -13,11 +13,10 @@ class Delete_course extends Abstract_model
 
     /**
      * Delete_course constructor.
-     * @param DBConnectionInterface $connection
      */
-    public function __construct($connection)
+    public function __construct()
     {
-        parent::__construct($connection);
+        parent::__construct();
 
         if($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST["id"])) {

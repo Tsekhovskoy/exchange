@@ -15,7 +15,7 @@ require_once (ROOT . "/controllers/AbstractController.php");
 class Load extends AbstractController
 {
     public function actionLoad() {
-        $forceModel = new Set_course(Db_connection::getInstance());
+        $forceModel = new Set_course();
         $forceModel->load();
     }
 }

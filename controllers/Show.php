@@ -16,7 +16,7 @@ require_once (ROOT . "/controllers/AbstractController.php");
 class Show extends AbstractController
 {
     public function actionShow() {
-        $courseModel = new Get_valid(Db_connection::getInstance());
+        $courseModel = new Get_valid();
         $newCourse = $courseModel->execute();
 
         if (empty($newCourse)) {

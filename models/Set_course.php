@@ -15,11 +15,10 @@ class Set_course extends Abstract_model
 
     /**
      * Set_course constructor.
-     * @param DBConnectionInterface $connection
      */
-    public function __construct($connection)
+    public function __construct()
     {
-        parent::__construct($connection);
+        parent::__construct();
 
         if($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST["date"]) && isset($_POST["time"]) && isset($_POST["forcecourse"])) {

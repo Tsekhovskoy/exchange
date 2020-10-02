@@ -19,7 +19,7 @@ class Login extends AbstractController
         if (isset($_SESSION['user'])) {
             View::render('set_course');
         } else {
-            $authModel = new Auth_model(Db_connection::getInstance());
+            $authModel = new Auth_model();
             $status = $authModel->execute();
 
             if ($status === 'Success') {

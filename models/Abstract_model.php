@@ -10,10 +10,12 @@ abstract class Abstract_model
 {
     protected $connection;
 
-    public function __construct(DBConnectionInterface $connection)
+    public function __construct()
     {
-        $this->connection = $connection;
+        $this->connection = Db_connection::getInstance();
     }
 
-    abstract public function execute();
+    public function execute() {
+
+    }
 }
