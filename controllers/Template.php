@@ -3,7 +3,7 @@
 /**
  * Template class calls template rendering
  */
-require_once (ROOT . "/app/View.php");
+
 require_once (ROOT . "/controllers/AbstractController.php");
 
 /**
@@ -12,6 +12,6 @@ require_once (ROOT . "/controllers/AbstractController.php");
 class Template extends AbstractController
 {
     public function actionTemplate() {
-        View::render('template');
+        $this->view->render('template');
     }
 }

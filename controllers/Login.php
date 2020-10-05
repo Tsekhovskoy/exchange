@@ -5,7 +5,6 @@
  * Controllers calls from /views/auth.php
  */
 
-require_once (ROOT . "/app/View.php");
 require_once (ROOT . "/models/Auth_model.php");
 require_once (ROOT . "/controllers/AbstractController.php");
 
@@ -17,19 +16,19 @@ class Login extends AbstractController
     public function actionLogin() {
         session_start();
         if (isset($_SESSION['user'])) {
-            View::render('set_course');
+            $this->view->render('set_course');
         } else {
             $authModel = new Auth_model();
             $status = $authModel->execute();
 
             if ($status === 'Success') {
-                View::render('set_course');
+                $this->view->render('set_course');
             } elseif
             ($status === 'Error') {
-                View::render('auth');
+                $this->view->render('auth');
             } elseif ($status === 'Empty') {
                 echo '<p style="color: red">Sorry, the server with your personal data crashed</p>';
-                View::render('auth');
+                $this->view->render('auth');
             }
         }
         session_write_close();

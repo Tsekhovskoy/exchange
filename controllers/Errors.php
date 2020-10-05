@@ -3,7 +3,6 @@
  * The errors class call error-view if entered URL is incorrect
  */
 
-require_once(ROOT . "/app/View.php");
 require_once (ROOT . "/controllers/AbstractController.php");
 
 /**
@@ -11,8 +10,7 @@ require_once (ROOT . "/controllers/AbstractController.php");
  */
 class Errors extends AbstractController
 {
-    public function actionErrors()
-    {
-        View::render('error');
+    public function actionErrors() {
+        $this->view->render('error');
     }
 }

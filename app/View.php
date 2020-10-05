@@ -7,9 +7,7 @@
  */
 class View
 {
-    public static function render($name) {
-
+    public function render($name) {
         require_once (ROOT . "/views/$name.php");
-
     }
 }

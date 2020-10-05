@@ -9,7 +9,6 @@ class Router
     private $routes;
 
     public function __construct() {
-        //$routesPath = ROOT.'/config/routes.php';
         $this->routes = include (ROOT.'/config/routes.php');
     }
 
