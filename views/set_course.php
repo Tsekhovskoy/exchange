@@ -22,7 +22,7 @@
                 <label>Force course time valid (hh:mm AM/PM)</label>
                 <input type="time" name="time" id="time" required>
                 <label>Force course value</label>
-                <input type="number" name="forcecourse" id="forcecourse" step="0.01" min="0" placeholder="0,00" required> UAH
+                <input type="number" name="forcecourse" id="forcecourse" value="<?php echo $default; ?>" step="0.01" min="0" placeholder="0,00" required> UAH
                 <button type="submit" class="force_btn" id="force_btn">Submit</button>
 
         </form>

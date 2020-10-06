@@ -14,15 +14,18 @@ require_once (ROOT . "/controllers/AbstractController.php");
 class Login extends AbstractController
 {
     public function actionLogin() {
+        $default = DEFAULT_COURSE;
+        $default = compact('default');
+
         session_start();
         if (isset($_SESSION['user'])) {
-            $this->view->render('set_course');
+            $this->view->render('set_course', $default);
         } else {
             $authModel = new Auth_model();
             $status = $authModel->execute();
 
             if ($status === 'Success') {
-                $this->view->render('set_course');
+                $this->view->render('set_course',  $default);
             } elseif
             ($status === 'Error') {
                 $this->view->render('auth');

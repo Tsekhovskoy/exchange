@@ -7,7 +7,8 @@
  */
 class View
 {
-    public function render($name) {
+    public function render($name, $params=[]) {
+        extract($params);
         require_once (ROOT . "/views/$name.php");
     }
 }
